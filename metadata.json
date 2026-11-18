@@ -1,0 +1,7 @@
+{
+  "name": "AXON",
+  "description": "AXON is a motion research studio: an open logbook of real-time rendering studies in particles, fluids and signed surfaces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

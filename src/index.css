@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #aa88ff;
+  --text: #dddddd;
+  --muted: #8a8a8a;
+  --chip: #1c1c1c;
+  --line: #2a2a2a;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000;
+  color: var(--text);
+  font-family: "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Tahoma, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-mono {
+  font-family: "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+}
+
+/* Hide scrollbars while preserving scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Text column styling & responsive breakpoints */
+.about {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 60px;
+  width: 440px;
+  max-height: 84vh;
+}
+
+.about-p {
+  text-align: justify;
+}
+
+@media (max-width: 1200px) {
+  .about {
+    left: 24px;
+    width: 380px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 760px) {
+  .tags-desktop,
+  .list-desktop {
+    display: none !important;
+  }
+
+  .about {
+    left: 20px !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    top: auto !important;
+    transform: none !important;
+    width: auto !important;
+    max-height: calc(100vh - 95px);
+    overflow-y: auto;
+    padding-bottom: 20px;
+  }
+
+  .about section {
+    margin-bottom: 1.2em !important;
+  }
+
+  .about-p {
+    text-align: right !important;
+  }
+}
