@@ -109,7 +109,9 @@ Username: @CustomerrServiceBot
 - تفاوت خدمات و امکانات پروژه‌ها را توضیح بده.
 - برای پروژه‌های جدید، راهکار فنی متناسب پیشنهاد بده.
 
-لینک مستقیم نمونه‌کارها:
+لینک مستقیم نمونه‌کارها و وب‌سایت ثبت سفارش:
+وب‌سایت ثبت سفارش و نمونه‌کارها (BotForm): https://botformweb.pages.dev/
+نمونه کار تحلیل چندتایم‌فریمی XAUUSD (AurumAI): https://aurumai.ai.studio/
 https://t.me/Filesavebox_bot
 https://t.me/Musicdownloadfindebot
 https://t.me/Appfinderrbot

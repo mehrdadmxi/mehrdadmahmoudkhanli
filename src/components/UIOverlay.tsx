@@ -22,6 +22,7 @@ const PROJECTS: ProjectItem[] = [
     category: 'هوش مصنوعی و بات‌نویسی',
     videoUrl: 'https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/aaaf/oraciteslArea.mp4',
     tag: 'پروژه‌ها',
+    liveUrl: 'https://botformweb.pages.dev/',
     description: 'طراحی و پیاده‌سازی ربات‌های پیشرفته تلگرام برای جستجو و دریافت هوشمند موزیک و نرم‌افزار، همراه با سامانه خودکار رزرو نوبت و مدیریت آنلاین خدمات با اتصال به پایگاه داده MySQL.',
     achievements: [
       'طراحی بات‌های هوشمند Music Finder و App Finder با سرعت پاسخ‌دهی بالا',
@@ -160,8 +161,18 @@ export const UIOverlay: React.FC = () => {
 
       {/* Top Left Quick Contact Controls & Profile Photo */}
       <div
-        className="absolute top-6 left-6 flex items-center gap-2.5 pointer-events-auto"
+        className="absolute top-6 left-6 flex items-center gap-2 pointer-events-auto"
       >
+        <a
+          href="https://botformweb.pages.dev/"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded border text-[11px] text-white hover:border-[#aa88ff] hover:text-[#aa88ff] transition-colors bg-[#0a0a0a]/90 backdrop-blur-sm"
+          style={{ borderColor: 'var(--accent)' }}
+        >
+          <span>ثبت سفارش و نمونه‌کارها</span>
+          <span className="font-mono text-[#aa88ff]" dir="ltr">↗</span>
+        </a>
         <a
           href="tel:09147960679"
           className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded border text-[11px] text-[#cfcfcf] hover:text-white hover:border-[#aa88ff] transition-colors bg-[#0a0a0a]/90 backdrop-blur-sm"
@@ -250,9 +261,23 @@ export const UIOverlay: React.FC = () => {
                   <h4 className="text-white text-[13px] font-semibold text-right">
                     {p.title}
                   </h4>
-                  <span className="text-[11px] text-[#aa88ff] underline shrink-0 mt-0.5">
-                    جزئیات
-                  </span>
+                  <div className="flex items-center gap-1.5 shrink-0 mt-0.5">
+                    {p.liveUrl && (
+                      <a
+                        href={p.liveUrl}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-[10.5px] px-2 py-0.5 rounded bg-[#aa88ff]/20 border border-[#aa88ff]/60 text-[#e2d4ff] hover:bg-[#aa88ff] hover:text-black font-medium transition-colors"
+                        title={p.liveUrl}
+                      >
+                        مشاهده سایت ↗
+                      </a>
+                    )}
+                    <span className="text-[11px] text-[#aa88ff] underline underline-offset-4">
+                      جزئیات
+                    </span>
+                  </div>
                 </div>
                 <p
                   className={`text-[11px] text-[#8a8a8a] mt-1 leading-[1.6] text-right ${
@@ -287,6 +312,18 @@ export const UIOverlay: React.FC = () => {
             </button>
           ))}
         </div>
+
+        {/* Mobile Quick Portal Link */}
+        <a
+          href="https://botformweb.pages.dev/"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="sm:hidden flex items-center justify-between gap-2 px-3 py-2 mb-3 rounded border text-[11.5px] text-white hover:border-[#aa88ff] transition-colors bg-[#0a0a0a]/85"
+          style={{ borderColor: 'var(--accent)' }}
+        >
+          <span>ثبت سفارش و نمونه‌کارها</span>
+          <span className="font-mono text-[#aa88ff]" dir="ltr">botformweb.pages.dev ↗</span>
+        </a>
 
         {/* Content Box with subtle obsidian background for pristine readability over particles */}
         <div className="p-5 rounded-lg border bg-[#000000]/75 backdrop-blur-[2px] shadow-2xl space-y-6" style={{ borderColor: 'var(--line)' }}>
@@ -392,32 +429,60 @@ export const UIOverlay: React.FC = () => {
           {(activeTab === 'all' || activeTab === 'projects') && (
             <section>
               <h2
-                className="text-[12px] mb-2 font-medium tracking-[0.02em]"
+                className="text-[12px] mb-2.5 font-medium tracking-[0.02em]"
                 style={{ color: 'var(--accent)' }}
               >
                 [ پروژه‌ها و دستاوردها ]
               </h2>
-              <ul className="text-[12.5px] leading-[1.8] text-[#dddddd] space-y-2 list-inside">
+
+              <div className="space-y-2 mb-3">
+                <a
+                  href="https://botformweb.pages.dev/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="group flex flex-wrap items-center justify-between gap-2 p-2.5 rounded border border-[#aa88ff]/50 bg-[#aa88ff]/[0.08] hover:bg-[#aa88ff]/[0.16] hover:border-[#aa88ff] transition-all"
+                >
+                  <div className="text-[12.5px] leading-[1.65] text-white font-medium">
+                    طراحی و توسعه{' '}
+                    <span className="text-[#d8c8ff] font-semibold">
+                      وب‌سایت سه‌بعدی ثبت سفارش و نمونه‌کارها (BotForm)
+                    </span>
+                  </div>
+                  <span
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#aa88ff] group-hover:bg-white text-black text-[11px] font-semibold font-mono transition-colors shrink-0"
+                    dir="ltr"
+                  >
+                    <span>botformweb.pages.dev</span>
+                    <span>↗</span>
+                  </span>
+                </a>
+
+                <a
+                  href="https://aurumai.ai.studio/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="group flex flex-wrap items-center justify-between gap-2 p-2.5 rounded border border-[#aa88ff]/50 bg-[#aa88ff]/[0.08] hover:bg-[#aa88ff]/[0.16] hover:border-[#aa88ff] transition-all"
+                >
+                  <div className="text-[12.5px] leading-[1.65] text-white font-medium">
+                    طراحی و پیاده‌سازی{' '}
+                    <span className="text-[#d8c8ff] font-semibold">
+                      سیستم تحلیل تکنیکال چندتایم‌فریمی XAUUSD (AurumAI)
+                    </span>
+                  </div>
+                  <span
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#aa88ff] group-hover:bg-white text-black text-[11px] font-semibold font-mono transition-colors shrink-0"
+                    dir="ltr"
+                  >
+                    <span>aurumai.ai.studio</span>
+                    <span>↗</span>
+                  </span>
+                </a>
+              </div>
+
+              <ul className="text-[12.5px] leading-[1.8] text-[#dddddd] space-y-1.5 list-inside">
                 <li>• طراحی ربات‌های هوشمند <span className="text-white font-medium">Music Finder</span> و <span className="text-white font-medium">App Finder</span></li>
                 <li>• طراحی و پیاده‌سازی <span className="text-white font-medium">ربات رزرو نوبت و مدیریت هوشمند خدمات</span></li>
                 <li>• توسعه سیستم‌های <span className="text-white font-medium">اتوماسیون چندعاملی با n8n</span> جهت اتصال وب‌سرویس‌ها</li>
-                <li>
-                  •{' '}
-                  <a
-                    href="https://aurumai.ai.studio/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="text-[#dddddd] hover:text-[#aa88ff] transition-colors underline decoration-[#aa88ff]/50 underline-offset-4 hover:decoration-[#aa88ff]"
-                  >
-                    طراحی و پیاده‌سازی{' '}
-                    <span className="text-white font-medium">
-                      سیستم تحلیل تکنیکال چندتایم‌فریمی
-                    </span>{' '}
-                    <span className="text-[#aa88ff] text-[11px] font-mono inline-block" dir="ltr">
-                      ↗
-                    </span>
-                  </a>
-                </li>
                 <li>• طراحی و اجرای وب‌سایت <span className="text-white font-medium">اجاره آنلاین کنسول‌های PS4 و PS5</span></li>
                 <li>• طراحی و استقرار سامانه‌های دیجیتال و ابزارهای کاربردی کسب‌وکار</li>
               </ul>
@@ -495,13 +560,45 @@ export const UIOverlay: React.FC = () => {
                   <div className="flex items-center gap-1.5 shrink-0 mr-1">
                     <a
                       href="mailto:mehrdadmahmoodkhanli@gmail.com"
-                      className="text-[11px] text-[#aa88ff] hover:text-white px-2 py-0.5 rounded border border-[#2a2a2a] transition-colors"
+                      className="text-[11px] text-black bg-[#aa88ff] hover:bg-white px-2 py-0.5 rounded font-medium transition-colors"
                     >
-                      ارسال ایمیل
+                      ارسال ایمیل ↗
                     </a>
                     <button
                       type="button"
                       onClick={() => copyToClipboard('mehrdadmahmoodkhanli@gmail.com', 'ایمیل')}
+                      className="text-[11px] text-[#cfcfcf] hover:text-white px-2 py-0.5 rounded border border-[#2a2a2a] transition-colors cursor-pointer"
+                    >
+                      کپی
+                    </button>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between p-2.5 rounded border bg-[#0a0a0a]/90" style={{ borderColor: 'var(--line)' }}>
+                  <div className="flex items-center gap-2 truncate">
+                    <span className="text-[#8a8a8a] text-[11px] shrink-0">ثبت سفارش و نمونه‌کارها:</span>
+                    <a
+                      href="https://botformweb.pages.dev/"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="text-white font-mono hover:text-[#aa88ff] transition-colors truncate"
+                      dir="ltr"
+                    >
+                      botformweb.pages.dev
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-1.5 shrink-0 mr-1">
+                    <a
+                      href="https://botformweb.pages.dev/"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="text-[11px] text-black bg-[#aa88ff] hover:bg-white px-2 py-0.5 rounded font-medium transition-colors"
+                    >
+                      مشاهده ↗
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => copyToClipboard('https://botformweb.pages.dev/', 'لینک نمونه‌کارها و ثبت سفارش')}
                       className="text-[11px] text-[#cfcfcf] hover:text-white px-2 py-0.5 rounded border border-[#2a2a2a] transition-colors cursor-pointer"
                     >
                       کپی
@@ -620,9 +717,10 @@ export const UIOverlay: React.FC = () => {
                     href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="px-3.5 py-2 rounded border border-[#2a2a2a] text-[#cfcfcf] hover:text-white hover:border-[#aa88ff] text-[12px] transition-colors"
+                    className="px-3.5 py-2 rounded border border-[#aa88ff] bg-[#aa88ff]/15 text-white hover:bg-[#aa88ff] hover:text-black text-[12px] font-medium transition-colors inline-flex items-center gap-1.5"
                   >
-                    مشاهده نمونه کار
+                    <span>مشاهده وب‌سایت</span>
+                    <span className="font-mono" dir="ltr">↗</span>
                   </a>
                 )}
               </div>

@@ -261,6 +261,14 @@ export const CollaborationModal: React.FC<CollaborationModalProps> = ({
               >
                 ارسال نسخه ایمیل
               </a>
+              <a
+                href="https://botformweb.pages.dev/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="px-3.5 py-2 rounded border border-[#2a2a2a] text-[#aa88ff] text-[12px] hover:text-white hover:border-[#aa88ff] transition-colors"
+              >
+                پورتال نمونه‌کارها ↗
+              </a>
             </div>
 
             <div className="pt-3 border-t border-[#2a2a2a] flex justify-between items-center text-[12px]">
